@@ -6,14 +6,12 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 23:35:06 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/03 23:40:49 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/03 23:45:21 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEXER_H
 # define LEXER_H
-
-# include "minishell.h"
 
 typedef enum e_token_type
 {
