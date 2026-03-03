@@ -6,7 +6,7 @@
 #    By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/03 23:06:27 by jbulot            #+#    #+#              #
-#    Updated: 2026/03/03 23:56:56 by jbulot           ###   ########.fr        #
+#    Updated: 2026/03/04 00:43:04 by jbulot           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,7 +20,8 @@ READLINE = -lreadline
 SRC = \
 	src/core/main.c \
 	src/signals/signals.c \
-	src/lexer/token.c
+	src/lexer/token.c \
+	src/lexer/lexer.c
 
 OBJ_DIR = obj
 OBJ = $(SRC:src/%.c=$(OBJ_DIR)/%.o)
