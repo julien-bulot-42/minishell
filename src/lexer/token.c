@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 23:49:23 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/03 23:58:40 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/04 00:03:55 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static t_token	*create_token(char *value, t_token_type type)
 {
 	t_token	*new;
 
-	new = malloc(sizeof(t_token));
+	new = malloc(sizeof(*new));
 	if (!new)
 		return (NULL);
 	new->value = value;
