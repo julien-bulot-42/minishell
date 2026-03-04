@@ -6,11 +6,12 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 00:05:42 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/04 00:44:25 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/04 01:28:16 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lexer.h"
+#include "libft.h"
 #include <stdlib.h>
 
 static int	is_space(char c)
@@ -51,27 +52,27 @@ static void	handle_operator(t_token **tokens, char *input, int *i)
 {
 	if (input[*i] == '|')
 	{
-		add_token(tokens, strdup("|"), T_PIPE);
+		add_token(tokens, ft_strdup("|"), T_PIPE);
 		(*i)++;
 	}
 	else if (input[*i] == '<' && input[*i + 1] == '<')
 	{
-		add_token(tokens, strdup("<<"), T_HEREDOC);
+		add_token(tokens, ft_strdup("<<"), T_HEREDOC);
 		(*i) += 2;
 	}
 	else if (input[*i] == '>' && input[*i + 1] == '>')
 	{
-		add_token(tokens, strdup(">>"), T_REDIR_APPEND);
+		add_token(tokens, ft_strdup(">>"), T_REDIR_APPEND);
 		(*i) += 2;
 	}
 	else if (input[*i] == '<')
 	{
-		add_token(tokens, strdup("<"), T_REDIR_IN);
+		add_token(tokens, ft_strdup("<"), T_REDIR_IN);
 		(*i)++;
 	}
 	else if (input[*i] == '>')
 	{
-		add_token(tokens, strdup(">"), T_REDIR_OUT);
+		add_token(tokens, ft_strdup(">"), T_REDIR_OUT);
 		(*i)++;
 	}
 }
