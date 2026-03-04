@@ -6,7 +6,7 @@
 #    By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/03 23:06:27 by jbulot            #+#    #+#              #
-#    Updated: 2026/03/04 01:25:09 by jbulot           ###   ########.fr        #
+#    Updated: 2026/03/04 01:35:48 by jbulot           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,7 @@ NAME = minishell
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDES = -Iincludes
+INCLUDES = -Iincludes -Ilibft
 READLINE = -lreadline
 
 LIBFT_DIR = libft
