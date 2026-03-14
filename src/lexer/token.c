@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:18:55 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 12:25:00 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 14:15:24 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_token	*token_new(char *value, t_token_type type)
 {
 	t_token	*token;
 
-	token = malloc(sizeof(t_token));
+	token = malloc(sizeof(*token));
 	if (!token)
 		return (NULL);
 	token->value = value;
