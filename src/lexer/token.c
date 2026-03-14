@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:18:55 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 14:15:24 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 14:54:10 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ void	token_print(t_token *list)
 {
 	while (list)
 	{
-		printf("TOKEN: %s\n", list->value);
+		printf("TYPE:%d VALUE:%s\n",
+			list->type,
+			list->value ? list->value : "NULL");
 		list = list->next;
 	}
 }
