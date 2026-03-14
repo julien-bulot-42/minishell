@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:11:59 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 12:17:29 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 15:37:14 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,20 @@ typedef struct s_token
 
 t_token	*lexer(char *input);
 
-/* token*/
+/* token utils */
 
 t_token	*token_new(char *value, t_token_type type);
 void	token_add_back(t_token **list, t_token *new);
 void	token_print(t_token *list);
+
+/* lexer utils */
+
+int		is_space(char c);
+int		is_operator(char c);
+
+/* token extraction */
+
+char	*extract_word(char *str, int *i);
+t_token	*extract_operator(char *str, int *i);
 
 #endif

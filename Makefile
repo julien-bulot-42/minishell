@@ -6,7 +6,7 @@
 #    By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/14 11:28:01 by jbulot            #+#    #+#              #
-#    Updated: 2026/03/14 14:24:35 by jbulot           ###   ########.fr        #
+#    Updated: 2026/03/14 15:38:58 by jbulot           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,8 +18,10 @@ CFLAGS = -Wall -Wextra -Werror
 SRC	= \
 src/main/main.c \
 src/lexer/lexer.c \
+src/lexer/lexer_utils.c \
+src/lexer/lexer_extract.c \
 src/lexer/token.c \
-src/utils/ft_strndup.c
+src/utils/ft_strndup.c \
 
 OBJ_DIR = obj
 OBJ = $(SRC:src/%.c=$(OBJ_DIR)/%.o)
