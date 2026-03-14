@@ -6,7 +6,7 @@
 #    By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/14 11:28:01 by jbulot            #+#    #+#              #
-#    Updated: 2026/03/14 17:46:02 by jbulot           ###   ########.fr        #
+#    Updated: 2026/03/14 18:11:44 by jbulot           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -26,6 +26,10 @@ src/lexer/token.c \
 src/expander/expand.c \
 src/expander/expand_var.c \
 src/expander/expand_utils.c \
+src/utils/ft_strlen.c \
+src/utils/ft_strncmp.c \
+src/utils/ft_strdup.c \
+src/utils/ft_itoa.c \
 src/utils/ft_strndup.c \
 
 OBJ_DIR = obj
