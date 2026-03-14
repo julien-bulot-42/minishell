@@ -6,7 +6,7 @@
 #    By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/14 11:28:01 by jbulot            #+#    #+#              #
-#    Updated: 2026/03/14 11:33:04 by jbulot           ###   ########.fr        #
+#    Updated: 2026/03/14 14:04:40 by jbulot           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -16,7 +16,9 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC	= \
-src/main/main.c
+src/main/main.c \
+src/lexer/lexer.c \
+src/lexer/token.c
 
 OBJ_DIR = obj
 OBJ = $(SRC:src/%.c=$(OBJ_DIR)/%.o)
