@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:51:30 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 14:06:04 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 14:23:11 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,7 @@ static char	*extract_word(char *str, int *i)
 	while (str[*i] && !is_space(str[*i]))
 		(*i)++;
 	len = *i - start;
-	word = malloc(len + 1);
-	if (!word)
-		return (NULL);
-	strncpy(word, str + start, len);
-	word[len] = '\0';
+	word = ft_strndup(str + start, len);
 	return (word);
 }
 
