@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 11:22:59 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 14:02:34 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 17:28:51 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(void)
 			break ;
 		add_history(line);
 		tokens = lexer(line);
+		expand_tokens(tokens, envp, 0);
 		token_print(tokens);
 		free(line);
 	}
