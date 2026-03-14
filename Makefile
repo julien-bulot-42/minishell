@@ -6,7 +6,7 @@
 #    By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/03/14 11:28:01 by jbulot            #+#    #+#              #
-#    Updated: 2026/03/14 15:38:58 by jbulot           ###   ########.fr        #
+#    Updated: 2026/03/14 16:42:46 by jbulot           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,6 +20,8 @@ src/main/main.c \
 src/lexer/lexer.c \
 src/lexer/lexer_utils.c \
 src/lexer/lexer_extract.c \
+src/lexer/lexer_quotes.c \
+src/lexer/lexer_operator.c \
 src/lexer/token.c \
 src/utils/ft_strndup.c \
 
