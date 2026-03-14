@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:18:55 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 15:08:47 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 15:15:14 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,16 @@ void	token_add_back(t_token **list, t_token *new)
 
 void	token_print(t_token *list)
 {
+	char	*value;
+
 	while (list)
 	{
+		value = list->value;
+		if (!value)
+			value = "NULL";
 		printf("TYPE:%s VALUE:%s\n",
 			token_type_str(list->type),
-			list->value ? list->value : "NULL");
+			value);
 		list = list->next;
 	}
 }

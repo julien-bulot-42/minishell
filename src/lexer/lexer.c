@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 13:51:30 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 15:11:07 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 15:23:40 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,25 @@ static char	*extract_word(char *str, int *i)
 	return (word);
 }
 
+static void	handle_operator(char *input, int *i, t_token **tokens)
+{
+	t_token	*new;
+
+	new = extract_operator(input, i);
+	token_add_back(tokens, new);
+}
+
+static void	handle_word(char *input, int *i, t_token **tokens)
+{
+	char	*word;
+
+	word = extract_word(input, i);
+	token_add_back(tokens, token_new(word, TOKEN_WORD));
+}
+
 t_token	*lexer(char *input)
 {
 	t_token	*tokens;
-	t_token	*new;
-	char	*word;
 	int		i;
 
 	i = 0;
@@ -82,15 +96,9 @@ t_token	*lexer(char *input)
 		if (is_space(input[i]))
 			i++;
 		else if (is_operator(input[i]))
-		{
-			new = extract_operator(input, &i);
-			token_add_back(&tokens, new);
-		}
+			handle_operator(input, &i, &tokens);
 		else
-		{
-			word = extract_word(input, &i);
-			token_add_back(&tokens, token_new(word, TOKEN_WORD));
-		}
+			handle_word(input, &i, &tokens);
 	}
 	return (tokens);
 }
