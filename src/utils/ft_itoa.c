@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 18:02:08 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 18:12:15 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 18:36:50 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,25 @@ static int	num_len(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
+	long	nb;
 	int		len;
 
-	len = num_len(n);
+	nb = n;
+	len = num_len(nb);
 	str = malloc(sizeof(*str) * (len + 1));
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
-	if (n == 0)
-		str[0] = '0';
-	while (n != 0)
+	if (nb < 0)
+		nb = -nb;
+	while (len > 0)
 	{
-		str[--len] = '0' + (n % 10);
-		n /= 10;
+		str[--len] = '0' + (nb % 10);
+		nb /= 10;
+		if (nb == 0)
+			break ;
 	}
-	if (len > 0)
+	if (n < 0)
 		str[0] = '-';
 	return (str);
 }
