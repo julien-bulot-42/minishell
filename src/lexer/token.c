@@ -6,11 +6,28 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:18:55 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 14:54:10 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 15:08:47 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lexer.h"
+
+static char	*token_type_str(t_token_type type)
+{
+	if (type == TOKEN_WORD)
+		return ("WORD");
+	if (type == TOKEN_PIPE)
+		return ("PIPE");
+	if (type == TOKEN_REDIR_IN)
+		return ("REDIR_IN");
+	if (type == TOKEN_REDIR_OUT)
+		return ("REDIT_OUT");
+	if (type == TOKEN_APPEND)
+		return ("APPEND");
+	if (type == TOKEN_HEREDOC)
+		return ("HEREDOC");
+	return ("UNKNOWN");
+}
 
 t_token	*token_new(char *value, t_token_type type)
 {
@@ -44,8 +61,8 @@ void	token_print(t_token *list)
 {
 	while (list)
 	{
-		printf("TYPE:%d VALUE:%s\n",
-			list->type,
+		printf("TYPE:%s VALUE:%s\n",
+			token_type_str(list->type),
 			list->value ? list->value : "NULL");
 		list = list->next;
 	}
