@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 15:30:51 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 15:41:33 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 16:20:24 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ int	is_space(char c)
 int	is_operator(char c)
 {
 	if (c == '|' || c == '<' || c == '>')
+		return (1);
+	return (0);
+}
+
+int	is_quote(char c)
+{
+	if (c == '\'' || c == '"')
 		return (1);
 	return (0);
 }

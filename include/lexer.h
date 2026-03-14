@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 12:11:59 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 15:37:14 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 16:27:02 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,12 @@ void	token_print(t_token *list);
 
 int		is_space(char c);
 int		is_operator(char c);
+int		is_quote(char c);
 
 /* token extraction */
 
 char	*extract_word(char *str, int *i);
+char	*extract_quoted_word(char *str, int *i);
 t_token	*extract_operator(char *str, int *i);
 
 #endif

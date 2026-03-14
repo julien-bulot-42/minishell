@@ -6,7 +6,7 @@
 /*   By: jbulot <jbulot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 15:32:52 by jbulot            #+#    #+#             */
-/*   Updated: 2026/03/14 16:14:12 by jbulot           ###   ########.fr       */
+/*   Updated: 2026/03/14 16:32:46 by jbulot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,23 @@ t_token	*extract_operator(char *str, int *i)
 	if (str[*i] == '<')
 		return (extract_redir_in(str, i));
 	return (NULL);
+}
+
+char	*extract_quoted_word(char *str, int *i)
+{
+	char	quote;
+	int		start;
+	int		len;
+	char	*word;
+
+	quote = str[*i];
+	(*i)++;
+	start = *i;
+	while (str[*i] && str[*i] != quote)
+		(*i)++;
+	len = *i - start;
+	word = ft_strndup(str + start, len);
+	if (str[*i] == quote)
+		(*i)++;
+	return (word);
 }
